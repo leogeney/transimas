@@ -3,16 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transi+</title>
+  <title>TRANSI+ Transit Website</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-
+    <link rel="icon" href="moto.png">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Margarine&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-100 text-gray-900 ">
+<body class="bg-green-100 text-gray-900 ">
 
   <!-- Encabezado -->
   <header class="flex justify-between items-center p-4 lg:p-6 shadow-lg bg-green-600">
@@ -23,20 +23,20 @@
             <img class="w-[60px]" src="moto.png" alt="">
         </span>
       </div>
-      <h1 id="transi" class="text-lg lg:text-xl font-semibold text-white cursor-pointer">Transi+</h1>
+      <h1 id="transi" class="text-2xl  lg:xl font-semibold text-white cursor-pointer">TRANSI+ </h1>
     </div>
 
     <!-- Navegación --> 
     <nav class="hidden md:flex space-x-6 font-medium text-green-100">
-        <a href="#" class="hover:text-green-300 transition transform active:scale-110 hover:text-[17px]">Inicio</a>
-        <a href="#" class="hover:text-green-300 transition transform active:scale-110 hover:text-[17px]">Sobre nosotros</a>
-        <a href="#" class="hover:text-green-300 transition transform active:scale-110 hover:text-[17px]">Nuestro equipo</a>
-        <a href="#" class="hover:text-green-300 transition transform active:scale-110 hover:text-[17px]">Contacto</a>
-        <a href="#" class="hover:text-green-300 transition transform active:scale-110 hover:text-[17px]">Cursos</a>
+        <a href="#" class="hover:text-green-300 transition transform">Inicio</a>
+        <a href="#" class="hover:text-green-300 transition transform">Sobre nosotros</a>
+        <a href="#" class="hover:text-green-300 transition transform">Nuestro equipo</a>
+        <a href="#" class="hover:text-green-300 transition transform">Contacto</a>
+        <a href="#" class="hover:text-green-300 transition transform">Cursos</a>
       </nav>
 
     <!-- Botón de contacto -->
-    <button class="bg-green-400 hover:bg-green-500 text-white font-semibold px-4 py-2 rounded-lg shadow-lg">
+    <button class="bg-green-700 hover:bg-green-500 text-white font-semibold px-4 py-2 rounded-lg shadow-lg">
       CONTÁCTENOS
     </button>
   </header>
@@ -45,7 +45,7 @@
   <section class="relative flex items-center justify-center h-[90vh] bg-center"
     style="background-image: url('https://cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/RUH2AAC3OFBEDGQNK2FLGZBRWI.jpeg');">
     <!-- Superposición oscura -->
-    <div class="absolute inset-0 bg-gradient-to-t from-green-600/80 via-green-500/70 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-green-600/90 via-green-500/10 to-transparent"></div>
 
     <!-- Contenido -->
     <div class="text-center relative z-10">
@@ -55,19 +55,37 @@
       <p class="mt-6 text-lg md:text-xl text-white drop-shadow-sm bg-green-900">
         Impulsando prácticas responsables en seguridad vial.
       </p>
-      <button id="mas-informacion" class="mt-8 px-6 py-3 bg-green-500 hover:bg-green-500 text-white font-semibold rounded-lg shadow-xl transition hover:shadow-lg hover:shadow-green-300">
+      <button id="mas-informacion" class="mt-8 px-6 py-3 bg-green-900 hover:bg-green-500 text-white font-semibold rounded-lg shadow-xl transition hover:shadow-lg hover:shadow-green-300">
         Descubre más
       </button>
       
     </div>
+
+    <div id="chatContainer" class="fixed bottom-5 right-5 bg-green-600 shadow-xl rounded-lg overflow-hidden">
+        <div class="chat-header" id="chatHeader ">
+            <span class="font-semibold text-green-700 flex items-center gap-3 ">
+                <i class="fa-solid fa-robot animate-ping-custom"></i>
+                <p>CHATBOT</p></span>
+            <button id="minimizeBtn" class="minimize-btn text-gray-600">-</button>
+        </div>
+    
+        <div id="chatWindow" class="chat-window flex flex-col h-80 w-80 border border-gray-300">
+            <!-- Ventana del chat -->
+            <div class="chat-box p-4 bg-gray-100 flex flex-col space-y-2" id="chatMessages">
+                <!-- Mensajes -->
+            </div>
+    
+            <!-- Input para escribir el mensaje -->
+            <div class="p-2 bg-gray-200">
+                <input id="chatInput" type="text" placeholder="Escribe tu mensaje..." class="chat-input focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+            </div>
+        </div>
+    </div>
   </section>
 
   <!-- Nuevo div con mensaje -->
-  <div class="justify-center h-[200px] flex items-center bg-green-500">
-    <p class="text-2xl md:text-3xl font-bold text-white">Fortalezca su viaje con educación sobre seguridad vial</p>
-  </div>
-
-  <!-- Sección de nuestros cursos -->
+    
+   <!-- Sección de nuestros cursos -->
   <section class="py-16 bg-green-100">
     <div class="text-center">
       <h2 class="text-3xl md:text-4xl font-extrabold text-green-700">Nuestros Cursos</h2>
@@ -76,21 +94,21 @@
     
     <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4">
       <!-- Curso 1 -->
-      <div class="bg-green-200 p-6 rounded-lg shadow-lg">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
         <h3 class="text-2xl font-semibold text-green-600">Curso Básico de Seguridad Vial</h3>
         <p class="mt-4 text-gray-700">Aprende las reglas esenciales para conducir de manera segura y responsable.</p>
         <button class="mt-6 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition">Más Información</button>
       </div>
       
       <!-- Curso 2 -->
-      <div class="bg-green-200 p-6 rounded-lg shadow-lg">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
         <h3 class="text-2xl font-semibold text-green-600">Curso de Primeros Auxilios</h3>
         <p class="mt-4 text-gray-700">Capacitación en primeros auxilios para situaciones de emergencia en el tráfico.</p>
         <button class="mt-6 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition">Más Información</button>
       </div>
       
       <!-- Curso 3 -->
-      <div class="bg-green-200 p-6 rounded-lg shadow-lg">
+      <div class="bg-white p-6 rounded-lg shadow-lg">
         <h3 class="text-2xl font-semibold text-green-600">Curso Avanzado de Conducción Segura</h3>
         <p class="mt-4 text-gray-700">Formación avanzada para conductores experimentados que deseen perfeccionar su seguridad.</p>
         <button class="mt-6 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition">Más Información</button>
@@ -135,17 +153,23 @@
   <!-- Sección Involúcrese -->
 <section class="py-16 bg-green-600">
     <div class="text-center">
-      <h2 class="text-3xl md:text-4xl font-extrabold text-green-100">Involúcrese, Aprenda y Conduzca con Seguridad</h2>
-      <p class="mt-4 text-lg md:text-xl text-green-200">Participe en nuestros talleres interactivos de seguridad vial y mejore sus habilidades para conducir de manera responsable.</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-green-100">¡Pon a prueba tus conocimientos!</h2>
+      <p class="mt-4 text-lg md:text-xl text-green-200">
+        Demuestra lo que sabes respondiendo a nuestras preguntas desafiantes y aprendiendo algo nuevo en cada intento.
     </div>
   
     <div class="mt-8 text-center">
-      <button class="px-6 py-3 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition">Más Información</button>
+     <a href="prueba.html">
+        <button class="px-6 py-3 bg-green-700 text-white font-semibold rounded-lg hover:bg-green-800 transition">
+        Realizar prueba
+        </button>
+
+     </a>
     </div>
   </section>
 
   <!-- Sección de Contacto -->
-<section class="py-16 bg-green-100">
+  <section class="py-16 bg-green-100">
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
       <!-- Formulario -->
       <div class="w-full md:w-1/2 px-4">
@@ -154,10 +178,10 @@
   
         <form class="mt-8 space-y-6">
           <div class="flex flex-col space-y-4">
-            <input type="text" name="nombre" placeholder="Nombre Completo" class="px-4 py-2 w-full bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-            <input type="email" name="correo" placeholder="Correo Electrónico" class="px-4 py-2 w-full bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-            <input type="tel" name="contacto" placeholder="Número de Contacto" class="px-4 py-2 w-full bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-            <textarea name="mensaje" placeholder="Escribe tu mensaje" class="px-4 py-2 w-full bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" rows="4"></textarea>
+            <input type="text" name="nombre" placeholder="Nombre Completo" class="px-4 py-2 w-full bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 caret-green-700">
+            <input type="email" name="correo" placeholder="Correo Electrónico" class="px-4 py-2 w-full bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 caret-green-700">
+            <input type="tel" name="contacto" placeholder="Número de Contacto" class="px-4 py-2 w-full bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 caret-green-700">
+            <textarea name="mensaje" placeholder="Escribe tu mensaje" class="px-4 py-2 w-full bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 caret-green-700" rows="4"></textarea>
           </div>
           <div class="text-center">
             <button type="submit" class="mt-4 px-6 py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 transition">Enviar</button>
@@ -171,6 +195,7 @@
       </div>
     </div>
   </section>
+  
 
   <footer class="bg-green-700 text-white py-12">
     <div class="container mx-auto px-4">
@@ -239,7 +264,107 @@
       }, 500); // Tiempo de duración de la animación (en ms)
     });
 
-    AOS.init();
+    
+
+
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+    const chatContainer = document.getElementById('chatContainer');
+    const chatWindow = document.getElementById('chatWindow');
+    const minimizeBtn = document.getElementById('minimizeBtn');
+
+    let isMinimized = false; // Estado de la ventana (minimizada o no)
+
+    // Función para enviar mensajes
+    function sendMessage() {
+        const userMessage = chatInput.value.trim(); // Captura el mensaje del usuario
+        if (userMessage === '') return; // No hacer nada si el mensaje está vacío
+
+        // Mostrar el mensaje del usuario
+        const userMessageElement = document.createElement('div');
+        userMessageElement.classList.add( 'text-green-600', 'p-1','rounded-lg', 'right-0' ,);
+        userMessageElement.innerHTML = `<p class=" bg-gray-200 w-32 h-30 p-2 rounded-lg text-left ">${userMessage}</p>`;
+        chatMessages.appendChild(userMessageElement);
+
+        // Limpiar el campo de entrada
+        chatInput.value = '';
+
+        // Simular respuesta del chatbot con lógica básica
+        setTimeout(() => {
+            const botMessage = getBotResponse(userMessage);
+            const botMessageElement = document.createElement('div');
+            botMessageElement.classList.add('text-left', 'text-gray-700', 'p-2');
+            botMessageElement.innerHTML = `<p class="  p-2 rounded-lg w-full bg-green-200 text-green-700 text-left">${botMessage}</p>`;
+            chatMessages.appendChild(botMessageElement);
+            
+            // Desplazar hacia abajo para mostrar el último mensaje
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }, 1000);
+
+        // Desplazar hacia abajo para mostrar el último mensaje inmediatamente
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    // Función para obtener la respuesta del bot basada en el mensaje del usuario
+    function getBotResponse(userMessage) {
+        userMessage = userMessage.toLowerCase(); // Convertir a minúsculas para facilitar la comparación
+
+        if (userMessage.includes('hola') || userMessage.includes('hey') || userMessage.includes('buenos días')) {
+            return "¡Hola! ¿Cómo puedo ayudarte?";
+        }
+
+        if (userMessage.includes('cómo estás') || userMessage.includes('qué tal')) {
+            return "¡Estoy bien, gracias por preguntar! ¿Y tú?";
+        }
+
+        if (userMessage.includes('nombre') || userMessage.includes('quién eres')) {
+            return "Soy un chatbot creado para ayudarte. ¿En qué te puedo asistir?";
+        }
+
+        if (userMessage.includes('hora') || userMessage.includes('qué hora es')) {
+            const now = new Date();
+            return `La hora actual es: ${now.getHours()}:${now.getMinutes()}`;
+        }
+
+        if (userMessage.includes('que haces') || userMessage.includes('que estas haciendo')) {
+            return "Nada, aquí contigo.";
+        }
+
+        if (userMessage.includes('bleesd o ryan castro') || userMessage.includes('bendito o el gheto')) {
+            return "Mr. Stiven.";
+        }
+
+        if (userMessage.includes('quien es el mas patico de la u') || userMessage.includes('que significa pato')) {
+            return "Keiner.";
+        }
+
+        if (userMessage.includes('adiós') || userMessage.includes('hasta luego')) {
+            return "¡Hasta luego! Espero verte pronto.";
+        }
+
+        // Respuesta por defecto si el bot no entiende el mensaje
+        return "Lo siento, no entendí tu mensaje. ¿Puedes reformularlo?";
+    }
+
+    // Escuchar el evento 'Enter' para enviar el mensaje
+    chatInput.addEventListener('keypress', (event) => {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    });
+
+    // Función para minimizar/restaurar la ventana del chat
+    minimizeBtn.addEventListener('click', () => {
+        isMinimized = !isMinimized;
+
+        if (isMinimized) {
+            chatContainer.classList.add('minimized'); // Minimiza la ventana
+            minimizeBtn.innerHTML = '<i class="fa-solid fa-plus"></i>'; // Cambiar el icono a "+"
+        } else {
+            chatContainer.classList.remove('minimized'); // Restaura la ventana
+            minimizeBtn.innerHTML = '<i class="fa-solid fa-down-left-and-up-right-to-center"></i>'; // Cambiar el icono a "-"
+        }
+    });
   </script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -282,6 +407,75 @@
     .explode-animation {
       animation: explode 0.5s ease-out;
     }
+
+
+    .chat-window {
+            max-width: 400px;
+            max-height: 600px;
+            height: 100%;
+            width: 100%;
+            transition: all 0.3s ease; /* Agregar transición suave */
+        }
+
+        .chat-box {
+            overflow-y: auto; /* Habilitar scroll vertical */
+            max-height: 450px; /* Fijar altura máxima */
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9; /* Fondo claro para mejor visibilidad */
+            border-radius: 8px;
+        }
+
+        .chat-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+
+        .minimized {
+            height: 50px; /* Solo mostrar barra de título cuando está minimizado */
+        }
+
+        .chat-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #f3f4f6;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .chat-header:hover {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #b8ffbc;
+           transition:  1s all;
+            cursor: pointer;
+        }
+
+        .chat-header .minimize-btn {
+            cursor: pointer;
+        }
+
+        /* Agregar un estilo para ocultar el chat box cuando está minimizado */
+        .minimized .chat-box {
+            display: none;
+        }
+
+        @keyframes ping-custom {
+            75%, 100% {
+                transform: scale(1.2); /* Escala ligeramente menor */
+                opacity: 0; /* Desvanece suavemente */
+            }
+        }
+        .animate-ping-custom {
+            animation: ping-custom 1.3s cubic-bezier(0.4, 0, 0.6, 1) infinite; /* Más suave y lenta */
+        }
   </style>
 </body>
 </html>
